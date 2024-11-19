@@ -1,7 +1,7 @@
 import os
-from file_system_io_source.path_detail.path_detail import Path_detail
+from file_system_io.file_system_io_source.path_detail.abstract_path_detail import Abstract_path_detail
 
-class Directory_path_detail(Path_detail):
+class Directory_path_detail(Abstract_path_detail):
     def __init__(self, path: str, is_user_defined: bool):
         super().__init__(path, is_user_defined)
 

@@ -1,8 +1,8 @@
 import os
+from abc import ABC
+from file_system_io.file_system_io_source.path_detail.abstract_path_detail import Path_detail
 
-from file_system_io_source.path_detail.path_detail import Path_detail
-
-class File_system_io_manager():
+class Abstract_file_system_io_manager(ABC):
     def __init__(self, path):
         self.path: Path_detail = path
 

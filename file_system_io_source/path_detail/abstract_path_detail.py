@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import NoReturn, Union
 import os
 
-class Path_detail(ABC):
+class Abstract_path_detail(ABC):
     def __init__(self, 
                  path: str, 
                  is_user_defined: bool):
