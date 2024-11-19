@@ -1,10 +1,8 @@
-# file-system-io
+# file-system-io public classes
 
-## Public Classes
+## class `Directory_manager`
 
-### class `Directory_manager`
-
-*extends* `Abstract_file_system_io_manager`
+_extends_ `Abstract_file_system_io_manager`
 
 **creation (class method):**
 
@@ -78,12 +76,12 @@ _Parameters_
 clears the contents of a directory
 
 ---
----
+
 ---
 
-### class `File_manager`
+## class `File_manager`
 
-*extends* `Abstract_file_system_io_manager`
+_extends_ `Abstract_file_system_io_manager`
 
 **creation (class method):**
 
@@ -145,12 +143,12 @@ _Parameters_
 writes data to a file
 
 ---
----
+
 ---
 
-### class: `Directory_path_detail`
+## class: `Directory_path_detail`
 
-*extends* `Abstract_path_detail`
+_extends_ `Abstract_path_detail`
 
 **creation (class method):**
 
