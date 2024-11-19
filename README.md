@@ -1,54 +1,176 @@
 # file-system-io
 
-This package bundle data access features and provides a class `Abstract_file_system_io_manager`
+## Public Classes
 
-## Usage
+### class `Directory_manager`
 
-### Directory Control
+**creation (class method):**
 
-class: `Directory_manager`
+```python
+Directory_manager.create_instance(
+	dir_path: str | Directory_path_detail
+)
+```
 
-consists of: (Directory_creator, Directory_remover)
+#### Parameters
 
-public methods:
+| Name     | Type                             | Description |
+| -------- | -------------------------------- | ----------- |
+| dir_path | `str` or `Directory_path_detail` |             |
 
-- create()
-- remove()
-- clear_contents()
+#### Properties
 
-creation (class method):
+| Name    | Type                | Description |
+| ------- | ------------------- | ----------- |
+| creator | `Directory_creator` |             |
+| remover | `Directory_remover` |             |
 
-`Directory_manager.create_instance(dir_path)`
+#### Methods
 
-- dir_path: `str` or `Directory_path_detail`
+| Name             | Description |
+| ---------------- | ----------- |
+| create()         |             |
+| remove()         |             |
+| clear_contents() |             |
 
-### File Control
+---
 
-class: `File_manager`
+##### create(self)
 
-consists of: (File_reader, File_writer)
+```python
+def create(self) -> NoReturn:
+```
 
-public methods:
+_Parameters_
 
-- read()
-- write()
+- **N/A**
 
-creation (class method):
-`File_manager.create(file_name_with_extension, dir_path)`
+creates a directory
 
-- file_name_with_extension: `str`
-- dir_path: `str` or `Directory_path_detail`
+---
 
-### Source object mapping
+##### remove(self)
 
-class: `Directory_path_detail`
+```python
+def remove(self) -> NoReturn:
+```
 
-consists of: (abs_path, is_user_defined)
+_Parameters_
 
-public methods: N/A
+- **N/A**
 
-creation (class method):
-`Directory_path_detail.create(path, is_user_defined)`
+removes a directory
 
-- path: `str`
-- is_user_defined: `boolean`
+---
+
+##### clear_contents(self)
+
+```python
+def clear_contents(self) -> NoReturn:
+```
+
+_Parameters_
+
+- **N/A**
+
+clears the contents of a directory
+
+---
+
+### class `File_manager`
+
+**creation (class method):**
+
+```python
+File_manager.create(
+	file_name_with_extension: str,
+	dir_path: str | Directory_path_detail
+)
+```
+
+#### Parameters
+
+| Name                     | Type                             | Description |
+| ------------------------ | -------------------------------- | ----------- |
+| file_name_with_extension | `str`                            |             |
+| dir_path                 | `str` or `Directory_path_detail` |             |
+
+#### Properties
+
+| Name   | Type          | Description |
+| ------ | ------------- | ----------- |
+| reader | `File_reader` |             |
+| writer | `File_writer` |             |
+
+#### Methods
+
+| Name                           | Description |
+| ------------------------------ | ----------- |
+| read()                         |             |
+| write(new_data, data_strategy) |             |
+
+---
+
+##### read(self)
+
+```python
+def read(self) -> Dict:
+```
+
+_Parameters_
+
+- **N/A**
+
+reads data from a file
+
+---
+
+##### write(new_data, data_strategy)
+
+```python
+def write(self, new_data: Dict, data_strategy: Data_strategy) -> NoReturn:
+```
+
+_Parameters_
+
+- **new_data** `Dict`
+- **data_strategy** `Data_strategy` - the method to handle the transformation from the old data to new
+
+writes data to a file
+
+---
+
+### class: `Directory_path_detail`
+
+**consists of:** (abs_path, is_user_defined)
+
+**public methods:** N/A
+
+**creation (class method):**
+
+```python
+Directory_path_detail.create(
+	 path: str,
+	 is_user_defined: boolean
+)
+```
+
+#### Parameters
+
+| Name            | Type      | Description |
+| --------------- | --------- | ----------- |
+| path            | `str`     |             |
+| is_user_defined | `boolean` |             |
+
+#### Properties
+
+| Name            | Type      | Description |
+| --------------- | --------- | ----------- |
+| abs_path        | `str`     |             |
+| is_user_defined | `boolean` |             |
+
+#### Methods
+
+| Name | Description |
+| ---- | ----------- |
+|      |             |

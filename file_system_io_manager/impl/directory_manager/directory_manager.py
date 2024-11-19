@@ -12,11 +12,8 @@ class Directory_manager(Abstract_file_system_io_manager):
                  allow_missing_removal, 
                  permission_mode):
 
-        self.allow_existing_creation = allow_existing_creation
-        self.allow_missing_removal = allow_missing_removal
-
-        self.creator: Directory_creator = Directory_creator(dir_path, self.allow_existing_creation)
-        self.remover: Directory_remover = Directory_remover(dir_path, self.allow_missing_removal)
+        self.creator: Directory_creator = Directory_creator(dir_path, allow_existing_creation)
+        self.remover: Directory_remover = Directory_remover(dir_path, allow_missing_removal)
 
         super().__init__(dir_path)
 
