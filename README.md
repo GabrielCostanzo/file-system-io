@@ -4,6 +4,8 @@
 
 ### class `Directory_manager`
 
+*extends* `Abstract_file_system_io_manager`
+
 **creation (class method):**
 
 ```python
@@ -79,6 +81,8 @@ clears the contents of a directory
 
 ### class `File_manager`
 
+*extends* `Abstract_file_system_io_manager`
+
 **creation (class method):**
 
 ```python
@@ -142,9 +146,7 @@ writes data to a file
 
 ### class: `Directory_path_detail`
 
-**consists of:** (abs_path, is_user_defined)
-
-**public methods:** N/A
+*extends* `Abstract_path_detail`
 
 **creation (class method):**
 
