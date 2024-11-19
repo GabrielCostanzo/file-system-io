@@ -78,6 +78,8 @@ _Parameters_
 clears the contents of a directory
 
 ---
+---
+---
 
 ### class `File_manager`
 
@@ -142,6 +144,8 @@ _Parameters_
 
 writes data to a file
 
+---
+---
 ---
 
 ### class: `Directory_path_detail`
