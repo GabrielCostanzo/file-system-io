@@ -193,7 +193,7 @@ relative_path_detail: Directory_path_detail = Directory_path_detail.create(
 '''
 cwd_path_detail
 --------
-abspath : /Users/user/workspace/project_dir/test_cwd_path
+abspath : /Users/username/workspace/project_dir/test_cwd_path
 isuserdefined : True
 
 user_root_path_detail
@@ -203,7 +203,7 @@ isuserdefined : False
 
 relative_path_detail
 --------
-abspath : /Users/costanga98/workspace/test_user_root_path
+abspath : /Users/username/workspace/test_user_root_path
 isuserdefined : False
 '''
 
