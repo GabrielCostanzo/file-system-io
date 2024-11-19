@@ -163,7 +163,7 @@ writes data to a file
 
 _extends_ `Abstract_path_detail`
 
-a data object to represent system file paths
+A data object to represent system file paths. Relative paths are automatically converted into absolute path on init.
 
 **creation (class method):**
 
