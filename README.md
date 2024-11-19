@@ -165,6 +165,50 @@ _extends_ `Abstract_path_detail`
 
 A data object to represent system file paths. Relative paths are automatically converted into absolute path on init.
 
+### Example
+
+```python
+from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
+
+cwd_path = 'test_cwd_path'
+user_root_path = '/test_user_root_path'
+relative_path = '../test_user_root_path'
+
+cwd_path_detail: Directory_path_detail = Directory_path_detail.create(
+    path=cwd_path,
+    is_user_defined=True
+)
+
+user_root_path_detail: Directory_path_detail = Directory_path_detail.create(
+    path=user_root_path,
+    is_user_defined=False
+)
+
+relative_path_detail: Directory_path_detail = Directory_path_detail.create(
+    path=relative_path,
+    is_user_defined=False
+)
+
+
+'''
+cwd_path_detail
+--------
+abspath : /Users/user/workspace/project_dir/test_cwd_path
+isuserdefined : True
+
+user_root_path_detail
+--------
+abspath : /test_user_root_path
+isuserdefined : False
+
+relative_path_detail
+--------
+abspath : /Users/costanga98/workspace/test_user_root_path
+isuserdefined : False
+'''
+
+```
+
 **creation (class method):**
 
 ```python
