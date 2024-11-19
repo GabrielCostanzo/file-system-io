@@ -12,7 +12,8 @@ manages the creation and deletion of a single directory
 from file_system_io_manager.impl.directory_manager.directory_manager import Directory_manager
 from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
 
-directory_manager: Directory_manager = Directory_manager.create_instance(dir_path='testing_dir/nested_dir')
+path_str = 'testing_dir/nested_dir'
+directory_manager: Directory_manager = Directory_manager.create_instance(dir_path=path_str)
 directory_manager.create()
 #  + /Users/username/workspace/project_lib/testing_dir
 #  + /Users/username/workspace/project_lib/testing_dir/nested_dir
