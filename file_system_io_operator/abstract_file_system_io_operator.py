@@ -1,15 +1,15 @@
 from abc import ABC, abstractmethod
 from typing import Union, NoReturn
-from file_system_io.file_system_io_source.path_detail.abstract_path_detail import Path_detail
+from file_system_io_source.path_detail.abstract_path_detail import Abstract_path_detail
 
 class Abstract_file_system_io_operator(ABC):
-    def __init__(self, path: Path_detail):
+    def __init__(self, path: Abstract_path_detail):
         self._validate_path(path)
         self.path = path
     
     def _validate_path(self, path) -> Union[Exception | NoReturn]:
         if not path: raise Exception('missing required path')
-        if not isinstance(path, Path_detail): raise('Path_detail is required')
+        if not isinstance(path, Abstract_path_detail): raise('Path_detail is required')
         self._validate_path_impl(path)
     
     @abstractmethod

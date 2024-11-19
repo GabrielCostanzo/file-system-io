@@ -6,6 +6,21 @@ _extends_ `Abstract_file_system_io_manager`
 
 manages the creation and deletion of a single directory
 
+### Example
+
+```python
+from file_system_io_manager.impl.directory_manager.directory_manager import Directory_manager
+from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
+
+directory_manager: Directory_manager = Directory_manager.create_instance(dir_path='testing_dir/nested_dir')
+directory_manager.create()
+# creates /Users/username/workspace/project_lib/testing_dir (in current working directory)
+# creates /Users/username/workspace/project_lib/testing_dir/nested_dir (in testing_dir)
+directory_manager.remove()
+# removes /Users/username/workspace/project_lib/testing_dir/nested_dir
+# does not change /Users/username/workspace/project_lib/testing_dir (in current working directory)
+```
+
 **creation (class method):**
 
 ```python

@@ -4,10 +4,10 @@ from typing import Dict
 from file_system_io_operator.impl.file_io_operator.impl.file_reader.file_reader import File_reader
 from file_system_io_operator.impl.file_io_operator.impl.file_writer.file_writer import File_writer
 
-from file_system_io.file_system_io_manager.abstract_file_system_io_manager import Abstract_file_system_io_manager
+from file_system_io_manager.abstract_file_system_io_manager import Abstract_file_system_io_manager
 from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
 from file_system_io_source.path_detail.impl.file_path_detail import File_path_detail
-from file_system_io.file_system_io_data_strategy.abstract_data_strategy import Data_strategy
+from file_system_io_data_strategy.abstract_data_strategy import Data_strategy
 
 class File_manager(Abstract_file_system_io_manager):
     def __init__(self, 

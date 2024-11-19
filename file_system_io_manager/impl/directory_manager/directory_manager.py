@@ -1,6 +1,6 @@
 
 
-from file_system_io.file_system_io_manager.abstract_file_system_io_manager import Abstract_file_system_io_manager
+from file_system_io_manager.abstract_file_system_io_manager import Abstract_file_system_io_manager
 from file_system_io_operator.impl.directory_io_operator.impl.directory_creator import Directory_creator
 from file_system_io_operator.impl.directory_io_operator.impl.directory_remover import Directory_remover
 from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail

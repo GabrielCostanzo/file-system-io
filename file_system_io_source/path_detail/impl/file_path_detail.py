@@ -1,6 +1,6 @@
-from file_system_io.file_system_io_operator.impl.file_io_operator.enum.supported_file_extension import Supported_file_extension
+from file_system_io_operator.impl.file_io_operator.enum.supported_file_extension import Supported_file_extension
 from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
-from file_system_io.file_system_io_source.path_detail.abstract_path_detail import Abstract_path_detail
+from file_system_io_source.path_detail.abstract_path_detail import Abstract_path_detail
 import os
 
 class File_path_detail(Abstract_path_detail):

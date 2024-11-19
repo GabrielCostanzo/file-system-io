@@ -1,6 +1,6 @@
 from abc import abstractmethod
 from typing import NoReturn, Union
-from file_system_io.file_system_io_operator.abstract_file_system_io_operator import Abstract_file_system_io_operator
+from file_system_io_operator.abstract_file_system_io_operator import Abstract_file_system_io_operator
 from file_system_io_source.path_detail.impl.file_path_detail import File_path_detail
 
 
