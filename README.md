@@ -4,6 +4,8 @@
 
 _extends_ `Abstract_file_system_io_manager`
 
+manages the creation and deletion of a single directory
+
 **creation (class method):**
 
 ```python
@@ -83,6 +85,17 @@ clears the contents of a directory
 
 _extends_ `Abstract_file_system_io_manager`
 
+manages the reading and writing of a single file
+
+> [! Warning] Only file types that can be read as a dictionary are supported
+>
+> ```python
+> class Supported_file_types(Enum):
+>    YAML = 'yaml'
+>    JSON = 'json'
+>
+> ```
+
 **creation (class method):**
 
 ```python
@@ -149,6 +162,8 @@ writes data to a file
 ## class: `Directory_path_detail`
 
 _extends_ `Abstract_path_detail`
+
+a data object to represent system file paths
 
 **creation (class method):**
 
