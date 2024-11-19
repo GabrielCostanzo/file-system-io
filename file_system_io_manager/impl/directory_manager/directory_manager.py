@@ -31,12 +31,15 @@ class Directory_manager(Abstract_file_system_io_manager):
         self.create()
 
     @classmethod
-    def create_instance(cls, dir_path: str):
-    
-        dir_path_detail = Directory_path_detail(
-            path=dir_path,
-            is_user_defined=False
-        )
+    def create_instance(cls, dir_path: Directory_path_detail | str):
+        
+        if isinstance(dir_path, str):
+            dir_path_detail = Directory_path_detail(
+                path=dir_path,
+                is_user_defined=False
+            )
+        else:
+            dir_path_detail = dir_path
 
         base_directory_manager = Directory_manager(
             dir_path=dir_path_detail,

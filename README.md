@@ -1,41 +1,54 @@
 # file-system-io
 
-## data strategy
+This package bundle data access features and provides a class `Abstract_file_system_io_manager`
 
-**ABC:** Abstract_data_strategy
-**IMPL:**
+## Usage
 
-- Merge
-- Overwrite
+### Directory Control
 
-## manager
+class: `Directory_manager`
 
-**ABC:** Abstract_file_system_io_manager
-**IMPL:**
+consists of: (Directory_creator, Directory_remover)
 
-- Directory_manager
-- Simple_file_manager
+public methods:
 
-## operator
+- create()
+- remove()
+- clear_contents()
 
-**ABC:** Abstract_file_system_io_operator
-**IMPL:**
+creation (class method):
 
-- Directory_io_operator
-  - Directory_creator
-  - Directory_remover
-- File_io_operator
-  - File_Reader
-    - Json_file_reader
-    - Yaml_file_reader
-  - File_Writer
-    - Json_file_writer
-    - Yaml_file_writer
+`Directory_manager.create_instance(dir_path)`
 
-## source
+- dir_path: `str` or `Directory_path_detail`
 
-**ABC:** Abstract_path_detail
-**IMPL:**
+### File Control
 
-- Directory_path_detail
-- File_path_detail
+class: `File_manager`
+
+consists of: (File_reader, File_writer)
+
+public methods:
+
+- read()
+- write()
+
+creation (class method):
+`File_manager.create(file_name_with_extension, dir_path)`
+
+- file_name_with_extension: `str`
+- dir_path: `str` or `Directory_path_detail`
+
+### Source object mapping
+
+class: `Directory_path_detail`
+
+consists of: (abs_path, is_user_defined)
+
+public methods: N/A
+
+creation (class method):
+`Directory_path_detail.create(path, is_user_defined)`
+
+- path: `str`
+- is_user_defined: `boolean`

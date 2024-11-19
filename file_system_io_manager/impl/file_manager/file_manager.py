@@ -9,7 +9,7 @@ from file_system_io_source.path_detail.impl.directory_path_detail import Directo
 from file_system_io_source.path_detail.impl.file_path_detail import File_path_detail
 from file_system_io.file_system_io_data_strategy.abstract_data_strategy import Data_strategy
 
-class Simple_file_manager(Abstract_file_system_io_manager):
+class File_manager(Abstract_file_system_io_manager):
     def __init__(self, 
                  file_path: File_path_detail):
         
@@ -30,9 +30,14 @@ class Simple_file_manager(Abstract_file_system_io_manager):
         return self.writer.write(write_dict)
 
     @classmethod
-    def create(cls, file_name_with_extension: str, dir_path_detail: Directory_path_detail):
+    def create(cls, file_name_with_extension: str, dir_path: Directory_path_detail | str):
         
         file_name, file_extension = os.path.splitext(file_name_with_extension)
+
+        if isinstance(dir_path, str):
+            dir_path_detail = Directory_path_detail.create(path=dir_path)
+        else:
+            dir_path_detail = dir_path
 
         file_path_detail = File_path_detail(
             dir_path_detail=dir_path_detail,
