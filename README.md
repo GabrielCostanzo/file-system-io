@@ -103,6 +103,52 @@ _extends_ `Abstract_file_system_io_manager`
 
 manages the reading and writing of a single file
 
+### Example
+
+> [! Note] Setup
+>
+> The following test json file was created
+>
+> **path:** `/Users/user/workspace/project_lib/testing_dir/nested_dir/test_file.json`
+>
+> **data:**
+>
+> ```json
+> {
+>   "hello": "world",
+>   "num": 1
+> }
+> ```
+
+```python
+from file_system_io_manager.impl.directory_manager.directory_manager import Directory_manager
+from file_system_io_manager.impl.file_manager.file_manager import File_manager
+from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
+
+path_str = 'testing_dir/nested_dir'
+file_name_with_extension = 'test_file.json'
+
+path_detail: Directory_path_detail = Directory_path_detail.create(
+    path=path_str,
+    is_user_defined=True
+)
+
+directory_manager: Directory_manager = Directory_manager.create_instance(dir_path=path_detail)
+directory_manager.create()
+# creates /Users/username/workspace/project_lib/testing_dir (in current working directory)
+
+
+file_manager: File_manager = File_manager.create(
+    file_name_with_extension=file_name_with_extension,
+    dir_path=path_detail
+)
+
+print(file_manager.read())
+'''
+{'hello': 'world', 'num': 1}
+'''
+```
+
 > [! Warning] Only file types that can be read as a dictionary are supported
 >
 > ```python

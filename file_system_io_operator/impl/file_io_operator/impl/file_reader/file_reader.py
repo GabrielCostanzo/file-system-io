@@ -16,4 +16,3 @@ class File_reader(File_io_operator):
     @abstractmethod
     def _read_impl(self) -> Dict:
         raise NotImplementedError()
-    
