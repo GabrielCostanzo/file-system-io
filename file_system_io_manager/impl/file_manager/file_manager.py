@@ -23,9 +23,8 @@ class File_manager(Abstract_file_system_io_manager):
 
     def write(self, new_data: Dict, data_strategy: Abstract_data_strategy):
         write_dict = data_strategy.process_data(
-            file_path=self.path,
-            file_reader=self.reader, 
-            new_data=new_data
+            file_path=self.path, 
+            data=new_data
         )
         return self.writer.write(write_dict)
 

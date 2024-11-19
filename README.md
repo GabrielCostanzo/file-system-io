@@ -124,6 +124,8 @@ manages the reading and writing of a single file
 from file_system_io_manager.impl.directory_manager.directory_manager import Directory_manager
 from file_system_io_manager.impl.file_manager.file_manager import File_manager
 from file_system_io_source.path_detail.impl.directory_path_detail import Directory_path_detail
+from file_system_io_data_strategy.impl.merge import Merge
+from file_system_io_data_strategy.impl.overwrite import Overwrite
 
 path_str = 'testing_dir/nested_dir'
 file_name_with_extension = 'test_file.json'
@@ -143,9 +145,26 @@ file_manager: File_manager = File_manager.create(
     dir_path=path_detail
 )
 
+### read existing data ###
 print(file_manager.read())
 '''
 {'hello': 'world', 'num': 1}
+'''
+
+### write data (overwrite) ###
+new_data = {'name': 'John'}
+file_manager.write(new_data=new_data, data_strategy=Overwrite)
+print(file_manager.read())
+'''
+{'name': 'John'}
+'''
+
+### write data (merge) ###
+new_data = {'new_key': 'new_val'}
+file_manager.write(new_data=new_data, data_strategy=Merge)
+print(file_manager.read())
+'''
+{'name': 'John', 'new_key': 'new_val'}
 '''
 ```
 
